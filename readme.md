@@ -8,6 +8,7 @@ Lightweight template engine for C#
   * custom functions for displaying values or conditions.
   * includes.
   * extend base templates.
+  * custom tag. (**New**)
 
 
 How to use it:
@@ -138,5 +139,17 @@ Renders:
 	  </body>
 	</html>
 
+Built-In Functions:
 
-
+| Function Name | 
+|:--------------|
+| Equals        | 
+| GreaterThan   |
+| GreaterEquals |
+| LessThan      |
+| LessEquals    |
+| IsNull        |
+| IsTrue        |
+| IsFalse       |
+| IsEmpty       |
+| Format        |

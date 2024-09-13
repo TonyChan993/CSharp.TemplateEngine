@@ -1,0 +1,9 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.TemplateEngine", "CSharp.TemplateEngine\CSharp.TemplateEngine.csproj", "{BB896277-0A7B-48F3-8A23-4884CB62A1F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.TemplateEngine.Tests", "CSharp.TemplateEngine.Tests\CSharp.TemplateEngine.Tests.csproj", "{520A3DCE-0243-47CF-8FE0-84864801A386}"
+EndProject
+Global
+EndGlobal

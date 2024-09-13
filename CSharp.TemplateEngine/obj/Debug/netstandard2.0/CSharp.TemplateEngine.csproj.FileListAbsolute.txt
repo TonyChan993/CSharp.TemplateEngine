@@ -1,0 +1,11 @@
+/Users/tonychan/Shared/develop/test/CSharp.TemplateEngine/CSharp.TemplateEngine/bin/Debug/netstandard2.0/CSharp.TemplateEngine.deps.json
+/Users/tonychan/Shared/develop/test/CSharp.TemplateEngine/CSharp.TemplateEngine/bin/Debug/netstandard2.0/CSharp.TemplateEngine.dll
+/Users/tonychan/Shared/develop/test/CSharp.TemplateEngine/CSharp.TemplateEngine/bin/Debug/netstandard2.0/CSharp.TemplateEngine.pdb
+/Users/tonychan/Shared/develop/test/CSharp.TemplateEngine/CSharp.TemplateEngine/obj/Debug/netstandard2.0/CSharp.TemplateEngine.csproj.AssemblyReference.cache
+/Users/tonychan/Shared/develop/test/CSharp.TemplateEngine/CSharp.TemplateEngine/obj/Debug/netstandard2.0/CSharp.TemplateEngine.GeneratedMSBuildEditorConfig.editorconfig
+/Users/tonychan/Shared/develop/test/CSharp.TemplateEngine/CSharp.TemplateEngine/obj/Debug/netstandard2.0/CSharp.TemplateEngine.AssemblyInfoInputs.cache
+/Users/tonychan/Shared/develop/test/CSharp.TemplateEngine/CSharp.TemplateEngine/obj/Debug/netstandard2.0/CSharp.TemplateEngine.AssemblyInfo.cs
+/Users/tonychan/Shared/develop/test/CSharp.TemplateEngine/CSharp.TemplateEngine/obj/Debug/netstandard2.0/CSharp.TemplateEngine.csproj.CoreCompileInputs.cache
+/Users/tonychan/Shared/develop/test/CSharp.TemplateEngine/CSharp.TemplateEngine/obj/Debug/netstandard2.0/CSharp.TemplateEngine.sourcelink.json
+/Users/tonychan/Shared/develop/test/CSharp.TemplateEngine/CSharp.TemplateEngine/obj/Debug/netstandard2.0/CSharp.TemplateEngine.dll
+/Users/tonychan/Shared/develop/test/CSharp.TemplateEngine/CSharp.TemplateEngine/obj/Debug/netstandard2.0/CSharp.TemplateEngine.pdb
