@@ -73,6 +73,22 @@ Conditions can accept boolean values or functions:
 
 Functions
 ---------
+
+Built-In Functions:
+
+|  | 
+|:--------------|
+| Equals        | 
+| GreaterThan   |
+| GreaterEquals |
+| LessThan      |
+| LessEquals    |
+| IsNull        |
+| IsTrue        |
+| IsFalse       |
+| IsEmpty       |
+| Format        |
+
 You can define custom functions and call them to display values:
 
 	template.AddFunction("pow", (int a) => a * a);
@@ -139,17 +155,3 @@ Renders:
 	  </body>
 	</html>
 
-Built-In Functions:
-
-| Function Name | 
-|:--------------|
-| Equals        | 
-| GreaterThan   |
-| GreaterEquals |
-| LessThan      |
-| LessEquals    |
-| IsNull        |
-| IsTrue        |
-| IsFalse       |
-| IsEmpty       |
-| Format        |
