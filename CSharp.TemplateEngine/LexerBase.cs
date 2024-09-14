@@ -3,14 +3,13 @@ using System.Collections.Generic;
 
 namespace CSharp.TemplateEngine
 {
-    // Una función de estado que devuelve una función de estado. 
-    // De esta forma de un estado se pasa diréctamente al siguiente en vez de volver
-    // a un switch en el que recalcular cual es el próximo en función del anterior.
+	// A state function that returns a state function.
+	// In this way, one state passes directly to the next instead of returning to a switch in which the next one is recalculated based on the previous one.
     delegate LexStateFunc LexStateFunc(LexerBase l);
 
     /// <summary>
     /// Divide input en tokens.
-    /// Inspirado en la charla de Rob Pike sobre Go: http://rspace.googlecode.com/hg/slide/lex.html
+    /// Inspired by Rob Pike's talk on Go: http://rspace.googlecode.com/hg/slide/lex.html
     /// </summary>
     sealed class LexerBase
     {
