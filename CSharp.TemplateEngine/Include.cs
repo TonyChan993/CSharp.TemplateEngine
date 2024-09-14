@@ -2,7 +2,7 @@ using System;
 
 namespace CSharp.TemplateEngine
 {
-	// Una plantilla que se inserta en otra plantilla.
+	// A template that is inserted into another template.
 	sealed class Include : IRenderizable
 	{
 		public string Path { get; set; }

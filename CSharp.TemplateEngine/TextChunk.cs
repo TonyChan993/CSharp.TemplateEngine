@@ -1,7 +1,9 @@
 
 namespace CSharp.TemplateEngine
 {
-	// Una cadena de texto
+	/// <summary>
+	/// A string of text.
+	/// </summary>
 	sealed class TextChunk : IRenderizable
 	{
 		public string Value { get; set; }

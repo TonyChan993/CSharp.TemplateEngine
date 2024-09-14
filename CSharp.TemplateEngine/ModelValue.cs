@@ -2,11 +2,11 @@ using System;
 
 namespace CSharp.TemplateEngine
 {
-	// Una variable referente al modelo
-	//
-	//     * . significa el modelo en si
-	//     * .name sería el valor de la clave "name"
-	//
+	/// <summary>
+	/// A variable referring to the model
+	/// <para>*. means the model itself</para>
+	/// <para>*.name would be the value of the key "name"</para>
+	/// </summary>
 	sealed class ModelValue : IRenderizable
 	{
 		public string Key { get; set; }

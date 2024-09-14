@@ -155,3 +155,10 @@ Renders:
 	  </body>
 	</html>
 
+Custom Tags
+--------------
+```csharp
+		Template.TagPrefix = "<%";
+		Template.TagSuffix = "%>";
+		var template = Template.Parse("Hello <%.UserName%>!Age=<%.Age%>,Phone=<%.Phone%>");
+```

@@ -18,7 +18,7 @@ namespace CSharp.TemplateEngine
         public int Start;
         public int Pos;
 		public int Line = 1;
-        public List<Token> Tokens { get; set; } // En vez del channel acumula aqui los items escaneados.
+        public List<Token> Tokens { get; set; } // nstead of the channel, accumulate the scanned items here.
 
         public LexerBase(string input)
         {
@@ -31,7 +31,7 @@ namespace CSharp.TemplateEngine
             get { return this.Pos - this.Start; }
 		}
 
-		// lo que tiene por delante para procesar
+		// what it has ahead to process
 		public string Ahead
 		{
 			get { return this.Input.Substring(this.Pos); }
@@ -48,7 +48,7 @@ namespace CSharp.TemplateEngine
         }
 
         /// <summary>
-        /// Genera un nuevo token y avanza.
+        /// Generate a new token and move forward.
         /// </summary>
 		public Token Emit(TokenType t)
         {
@@ -65,7 +65,7 @@ namespace CSharp.TemplateEngine
         }
 
         /// <summary>
-        /// Avanza un caracter
+        /// Advance one character
         /// </summary>
         public char Next()
         {
@@ -115,14 +115,14 @@ namespace CSharp.TemplateEngine
             return this.Input[position];
         }
 
-        // Devuelve si los próximos caracteres sons igual a prefix
+        // Return whether the next characters are equal to prefix.
         public bool HasPrefix(string prefix)
         {
             return StartsWith(ref this.Input, this.Pos, prefix);
         }
 
 		/// <summary>
-		/// Comprueba si input empieza por value a partir de la posición start.
+		/// Check if input starts with value from position start.
 		/// </summary>
 		static bool StartsWith(ref string input, int start, string value)
 		{
@@ -142,7 +142,7 @@ namespace CSharp.TemplateEngine
 			return true;
 		}
 
-        // Consume toda la palabra si existe a continuación
+        // If the following exists, consume the entire word.
         public bool AcceptWord(string word)
         {
             if (this.HasPrefix(word))
@@ -154,7 +154,7 @@ namespace CSharp.TemplateEngine
             return false;
         }
 
-        // Consume el proximo caracter si esta dentro del conjunto valid.
+        // Consume the next character if it is within the valid set.
         public bool Accept(string valid)
         {
             var c = this.Next();
@@ -167,7 +167,7 @@ namespace CSharp.TemplateEngine
             return valid.IndexOf(c) >= 0;
         }
 
-        // Consume los próximos caracteres si están dentro del conjunto valid.
+        // Consume the next characters if they are within the valid set.
         public void AcceptAnyChar(string valid)
         {
             while (true)

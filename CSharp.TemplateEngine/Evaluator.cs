@@ -25,7 +25,7 @@ namespace CSharp.TemplateEngine
 		}
 
 		/// <summary>
-		/// Convierte los argumentos proporcionados en la plantilla al tipo que recibe la función.
+		/// Convert the arguments provided in the template to the type received by the function.
 		/// </summary>
 		static object[] ConvertFuncParameters(string name,
 			MethodInfo function, 
@@ -49,8 +49,8 @@ namespace CSharp.TemplateEngine
 						name, funcParameters.Length, templateArguments.Count));
 				}
 
-				// si la función tiene un argumento más solo puede ser un tipo especial:
-				// o rendercontext o string[] que es como un params en c#
+				// If the function has one more argument, it can only be a special type:
+				// either RenderContext or string[] which is like a params in C#.
 				if(templateArguments.Count == funcParameters.Length - 1)
 				{
 					if(last.ParameterType == typeof(string[]))
@@ -77,17 +77,17 @@ namespace CSharp.TemplateEngine
 				}	
 			}
 
-			// convertir todos los parámetros
+			// convert all parameters
 			for(int i = 0, l = templateArguments.Count; i < l; i++)
 			{
 				if(convertedValues[i] != null)
 				{
-					break; // ya se ha llegado a un param especial (RenderContext o string[])
+					break; // A special parameter has already been reached (RenderContext or string[]).
 				}
 
 				var argument = templateArguments[i];
 
-				// si empieza por . es que es un valor del modelo.
+				// If it starts with a period, it means it is a value of the model.
 				var value = argument[0] == '.' ? Template.GetValue(context.RenderModel, argument) : argument;
 
 				try

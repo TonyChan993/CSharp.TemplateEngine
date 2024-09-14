@@ -55,7 +55,7 @@ namespace CSharp.TemplateEngine
 
 			if(token.Value == "if")
 			{
-				// despues de un if viene una función
+				// After an if comes a function.
 				return LexKeyword;
 			}
 
@@ -115,7 +115,7 @@ namespace CSharp.TemplateEngine
 			{
 				var c = lexer.Next();
 
-				// las keys son letras, numeros, corchetes (para indices) y comillas dentro de los indices.
+				// The keys are letters, numbers, brackets (for indexes), and quotes inside the indexes.
 				if (c != '.' && 
 				    !char.IsLetterOrDigit(c) && 
 				    c != '[' && 

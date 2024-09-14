@@ -2,7 +2,6 @@ using System;
 using System.IO;
 using System.Collections;
 using System.Collections.Generic;
-using System.Reflection;
 using System.Globalization;
 using System.Linq;
 
@@ -13,7 +12,7 @@ namespace CSharp.TemplateEngine
 		private RenderContext renderContext;
 
 		/// <summary>
-		/// La ruta que contiene el archivo.
+		/// The path that contains the file.
 		/// </summary>
 		public string Path { get; set; }
 
@@ -73,7 +72,7 @@ namespace CSharp.TemplateEngine
 		}
 
 		/// <summary>
-		/// Añade una nueva plantilla que puede ser referenciada esta (como un include).
+		/// Add a new template that can be referenced this way (like an include).
 		/// </summary>
 		public Template ParseInclude (string name, string text)
 		{
@@ -169,8 +168,7 @@ namespace CSharp.TemplateEngine
 
 			if (value == null)
 			{
-				// si no esta definida la clave en el modelo, buscar en los valores internos. Puede 
-				// ser p. ej un loop.
+				// If the key is not defined in the model, search in the internal values. It can be, for example, a loop.
 				value = GetModelValue (model.RenderValues, key, model);
 			}
 
@@ -202,8 +200,8 @@ namespace CSharp.TemplateEngine
 				{
 					string modelIndex;
 
-					// Obtener el valor del indice:
-					// es un literal si va entre comillas
+					// Get the value of the index:
+					// it is a literal if it is between quotes
 					if(modelKey.Index[0] == '"')
 					{
 						modelIndex = modelKey.Index.Trim('"');
@@ -217,7 +215,7 @@ namespace CSharp.TemplateEngine
 						var v = GetValue(renderModel, modelKey.Index);
 						modelIndex = v != null ? v.ToString() : null;
 					}
-					// si no lleva . intentar tambien obtener el valor, por si es el índice de una propiedad indexada.
+					// If it doesn't have a dot, also try to obtain the value, in case it is the index of an indexed property.
 					else if(char.IsLetter(modelKey.Index[0]))
 					{
 						var v = GetValue(renderModel, modelKey.Index);
@@ -230,11 +228,11 @@ namespace CSharp.TemplateEngine
 
 					if(modelIndex == null)
 					{
-						// TODO: ¿lanzar excepción?
+						// TODO: Throw an exception?
 						return null;
 					}
 
-					// si el índice por el que se accede es un número
+					// If the index being accessed is a number.
 					if(char.IsDigit(modelIndex[0]))
 					{
 						var iIndex = int.Parse(modelIndex);
@@ -273,7 +271,7 @@ namespace CSharp.TemplateEngine
 
 
 		/// <summary>
-		/// Obtiene el valor de la propiedad key en el objeto.
+		/// Gets the value of the property key in the object.
 		/// </summary>
 		static object GetPropertyValue (object value, string propertyName)
 		{			
@@ -289,7 +287,7 @@ namespace CSharp.TemplateEngine
 				return null;
 			}
 			
-			// si no es un diccionario obtener la propiedad
+			// if it is not a dictionary, obtain the property.
 			var property = value.GetType().GetProperty(propertyName);
 			if(property == null)
 			{
@@ -301,7 +299,7 @@ namespace CSharp.TemplateEngine
 		}
 
 		/// <summary>
-		/// Si la plantilla extiende a otra renderiza la principal
+		/// if it is not a dictionary, obtain the property.
 		/// </summary>
 		void ExtendFromBaseTemplate(RenderContext context)
 		{
@@ -311,10 +309,10 @@ namespace CSharp.TemplateEngine
 				throw new TemplateException("Base template not found: " + this.BaseTemplate);
 			}
 
-			// preparar la template virtual a partir de la base y la extendida
+			// Prepare the virtual template from the base and the extended one.
 			var generated = new Template();
 
-			// añadir todos los elementos reasignando la plantilla principal en los bloques.
+			// Add all elements by reassigning the main template in the blocks.
 			foreach(var item in extended.Items)
 			{
 				var block = item as TemplateBlock;
@@ -325,7 +323,7 @@ namespace CSharp.TemplateEngine
 				generated.Items.Add(item);
 			}
 
-			// añadir los bloques de la plantilla extendida.
+			// Add the blocks of the extended template.
 			foreach(var block in this.Items.OfType<TemplateBlock>())
 			{
 				block.MainTemplate = generated;
@@ -337,15 +335,15 @@ namespace CSharp.TemplateEngine
 	}
 
 	/// <summary>
-	/// Los datos que utliza una plantilla para renderizarse.
+	/// The data that a template uses to render itself.
 	/// </summary>
 	sealed class RenderModel
 	{
 		public object Model;
 
 		/// <summary>
-		/// Contiene valores adicionales para el funcionamiento de las plantillas. Por ejemplo
-		/// en una iteración, el valor actual.
+		/// Contains additional values for the operation of templates. For example.
+		/// In an iteration, the current value.
 		/// </summary>
 		internal Map RenderValues = new Map ();
 	}
@@ -358,9 +356,8 @@ namespace CSharp.TemplateEngine
 	}
 			
 	/// <summary>
-	/// La clave de acceso a una propiedad.
-	/// Puede ser el nombre solo: .name
-	/// O un indice: .customer["name"]
+	/// Access key to a property.
+	/// It can be just the name:.name Or an index:.customer["name"]
 	/// </summary>
 	sealed class ModelKey
 	{
@@ -372,12 +369,13 @@ namespace CSharp.TemplateEngine
 			var key = new ModelKey ();
 
 			// La clave puede llevar un índice: .customer["name"]
+			// The key can have an index:.customer["name"]
 			var items = value.Trim ().Split ('[');
 			
-			// el nombre
+			// the name
 			key.Name = items [0];
 			
-			// el posible indice
+			// the possible index
 			if (items.Length > 1)
 			{
 				key.Index = items [1].TrimEnd (']');

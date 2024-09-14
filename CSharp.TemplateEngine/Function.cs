@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace CSharp.TemplateEngine
 {
 	/// <summary>
-	/// Una condición en las plantillas.
+	/// A condition in templates.
 	/// </summary>
 	sealed class Function : IRenderizable
 	{
@@ -12,8 +12,8 @@ namespace CSharp.TemplateEngine
 		public List<string> Arguments { get; set; }
 
 		/// <summary>
-		/// El valor asignado desde fuera como resultado de evaluar la función. Este valor
-		/// aparecerá en lugar de la función cuando se ejecute Render.
+		/// The value assigned from outside as a result of evaluating the function.
+		/// This value will appear in place of the function when Render is executed.
 		/// </summary>
 		public string Value { get; set; }	
 

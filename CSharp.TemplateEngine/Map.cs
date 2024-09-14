@@ -5,18 +5,16 @@ using System.Collections.Generic;
 namespace CSharp.TemplateEngine
 {
 	/// <summary>
-	/// Diccionario string-object. Por defecto no distingue mayúsculas/minúsculas en la clave
-	/// y que devuelve null cuando se pide una clave que no existe en lugar de lanzar una
-	/// excepción.
+	/// String-object dictionary. By default, it does not distinguish between uppercase and lowercase
+	/// in the key and returns null when a key that does not exist is requested instead of throwing an exception.
 	/// </summary>
 	sealed class Map : Map<object>
     {
     }
 
 	/// <summary>
-	/// Diccionario string-valor. Por defecto no distingue mayúsculas/minúsculas en la clave
-	/// y que devuelve null cuando se pide una clave que no existe en lugar de lanzar una
-	/// excepción.
+	/// String-value dictionary. By default, it does not distinguish between uppercase and lowercase
+	/// in the key and returns null when a key that does not exist is requested instead of throwing an exception.
 	/// </summary>
 	class Map<T> : Dictionary<string, T>
     {

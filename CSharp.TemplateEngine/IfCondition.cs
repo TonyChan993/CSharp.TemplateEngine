@@ -4,11 +4,11 @@ using System.Collections.Generic;
 namespace CSharp.TemplateEngine
 {
 	/// <summary>
-	/// Una condición en las plantillas.
+	/// A condition in templates.
 	/// </summary>
 	sealed class IfCondition : IRenderizable, IContainer
 	{
-		// si la condicion es un valor del modelo en vez de una función.
+		// if the condition is a value of the model instead of a function.
 		public string ModelKey { get; set; } 
 		public Function Expression { get; set; }
 		public Template Body { get; set; }

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace CSharp.TemplateEngine
 {	
 	/// <summary>
-	/// Un bucle.
+	/// A loop.
 	/// </summary>
 	sealed class Foreach : IRenderizable, IContainer
 	{

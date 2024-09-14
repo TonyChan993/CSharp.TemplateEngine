@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace CSharp.TemplateEngine
 {
     /// <summary>
-    /// Sencillo parser para poder anidar plantillas fácilmente.
+    /// Simple parser to easily nest templates.
     /// </summary>
     static class Parser
     {
